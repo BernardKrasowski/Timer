@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Timer</title>
+</head>
+
+<body>
+  <main class="container">
+
+    <div class="timer">
+      <input type="number" class="input" value="0" min="0" max='99' placeholder="00" data-hours data-inputs>
+      <input type="number" class="input" value="0" min="0" max="59" placeholder="00" data-minutes data-inputs>
+      <input type="number" class="input" value="0" min="0" max="59" placeholder="00" data-seconds data-inputs>
+    </div>
+
+    <div class="timer__buttons">
+      <button class="edit__button btn hide" data-edit-btn><i class="fas fa-edit"></i></button>
+      <button class="confirm__button btn " data-confirm-btn><i class="fas fa-check"></i></button>
+
+      <button class="start__button btn" disabled data-start-btn><i class="far fa-play-circle "></i></button>
+      <button class="stop__button btn hide" data-stop-btn><i class="far fa-pause-circle"></i></button>
+
+      <button class="reset__button btn" data-reset-btn><i class="fas fa-ban"></i></button>
+    </div>
+    <section class="alarm">
+      <audio src="https://actions.google.com/sounds/v1/alarms/mechanical_clock_ring.ogg" loop data-audio></audio>
+      <button class="alarm__button btn hide" data-alarm>
+        <i class="far fa-bell"></i>
+      </button>
+
+    </section>
+
+  </main>
+  <script src="./js/index.js"></script>
+  <script>
+    const timer = new Timer();
+    timer.initialize();
+  </script>
+</body>
+
+</html>
